@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b18">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080b18'/%3E%3Cpath d='M9 10h4v12H9zm6-4h4v20h-4zm6 7h4v10h-4z' fill='%23c8f169'/%3E%3C/svg%3E">
+  <title>Shatterline — Split the swarm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Shatterline home"><span class="brand-mark"><i></i><i></i><i></i></span><span>SHATTER<span class="brand-dim">LINE</span></span></a>
+      <div class="top-meta"><span class="live-dot"></span> ARCADE MODE <span class="top-divider">/</span> <span>001 — NEON DISTRICT</span></div>
+      <button class="icon-button sound-toggle" id="soundToggle" aria-label="Toggle sound" title="Toggle sound"><span id="soundIcon">♫</span></button>
+    </header>
+
+    <section class="intro">
+      <div class="intro-copy"><div class="eyebrow"><span class="eyebrow-line"></span> BREAK THE PATTERN</div><h1>One hit.<br><em>More chaos.</em></h1><p>Every collision splits your ball. Keep the swarm alive, clear the grid, and see how far the fracture goes.</p></div>
+      <div class="intro-stamp"><span class="stamp-number">01</span><span>INFINITE<br>FRACTURE</span></div>
+    </section>
+
+    <section class="game-layout" aria-label="Breakout game">
+      <div class="play-column">
+        <div class="game-topline"><div class="level-label"><span class="label-mini">SECTOR</span><strong id="levelValue">01</strong><span class="level-name" id="levelName">FIRST CONTACT</span></div><div class="game-top-right"><span class="status-pill" id="statusPill"><span></span> READY</span><button class="text-button" id="pauseButton" aria-label="Pause game" title="Pause (P)">Ⅱ</button></div></div>
+        <div class="canvas-frame" id="canvasFrame">
+          <canvas id="gameCanvas" aria-label="Breakout playfield. Move the paddle with your mouse, touch, or arrow keys." tabindex="0"></canvas>
+          <div class="canvas-vignette"></div>
+          <div class="center-message" id="centerMessage">
+            <div class="message-icon" id="messageIcon"><span></span><span></span><span></span></div>
+            <h2 id="messageTitle">READY TO<br><em>FRACTURE?</em></h2>
+            <p id="messageBody">Move your paddle to aim.<br>Tap or press space to launch.</p>
+            <button class="launch-button" id="launchButton"><span id="launchText">START RUN</span><b>↗</b></button>
+            <div class="message-foot" id="messageFoot">EVERY HIT MAKES TWO</div>
+          </div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+        </div>
+        <div class="game-bottomline"><div class="lives" id="livesDisplay" aria-label="3 lives"><span class="life-glyph">◆</span><span class="life-glyph">◆</span><span class="life-glyph">◆</span></div><span class="bottom-hint"><span class="keycap">←</span><span class="keycap">→</span> MOVE <span class="hint-sep">·</span> <span class="keycap">SPACE</span> LAUNCH</span><span class="ball-counter"><span class="counter-dot"></span><span id="ballCount">01</span> BALLS</span></div>
+      </div>
+      <aside class="side-panel">
+        <div class="score-block"><span class="label-mini">CURRENT SCORE</span><div class="score-value" id="scoreValue">000000</div><div class="score-track"><span id="scoreProgress"></span></div><div class="score-foot"><span>BEST</span><strong id="bestValue">000000</strong></div></div>
+        <div class="stat-grid"><div class="stat-card"><span class="label-mini">BRICKS LEFT</span><strong id="bricksValue">24</strong><span class="stat-note">IN THIS SECTOR</span></div><div class="stat-card"><span class="label-mini">MULTIPLIER</span><strong class="multiplier" id="multiplierValue">×1.0</strong><span class="stat-note">SWARM BONUS</span></div></div>
+        <div class="howto"><div class="panel-title"><span>FIELD NOTES</span><span class="panel-index">01 / 03</span></div><div class="note-row"><span class="note-icon paddle-icon">↔</span><p><strong>Stay in motion.</strong><br>Guide the paddle with your mouse, touch, or arrow keys.</p></div><div class="note-row"><span class="note-icon split-icon">✳</span><p><strong>Multiply on impact.</strong><br>Walls, bricks, and paddle hits all split every ball.</p></div><div class="note-row"><span class="note-icon heart-icon">◆</span><p><strong>Don't let them fall.</strong><br>Lose the whole swarm and spend a life.</p></div></div>
+        <div class="side-footer"><span class="tiny-star">✳</span><span>THE MORE THE MERRIER.<br>UNTIL IT ISN'T.</span></div>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>SHATTERLINE <span class="footer-dot">●</span> A FRACTURE ARCADE ORIGINAL</span><span>NO RUN IS THE SAME <span class="footer-arrow">↗</span></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
